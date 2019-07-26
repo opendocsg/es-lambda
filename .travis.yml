@@ -1,0 +1,7 @@
+language: node_js
+node_js: 10
+script:
+    - echo TODO scripting
+after_success:
+  - ELASTIC_SEARCH_HOST=$ES_PROD npx serverless deploy -s prod
+  - ELASTIC_SEARCH_HOST=$ES_STAGING npx serverless deploy -s staging

@@ -1,0 +1,12 @@
+service: es-lambda
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  region: ap-southeast-1
+  timeout: 900
+  environment:
+    ELASTIC_SEARCH_HOST: ${env:ELASTIC_SEARCH_HOST}
+functions:
+  es:
+    handler: index.es
