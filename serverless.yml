@@ -2,11 +2,12 @@ service: es-lambda
 
 provider:
   name: aws
-  runtime: nodejs10.x
+  runtime: nodejs12.x
   region: ap-southeast-1
   timeout: 900
   environment:
     ELASTIC_SEARCH_HOST: ${env:ELASTIC_SEARCH_HOST}
+    GITHUB_TOKEN: ${env:GITHUB_TOKEN}
 functions:
   es:
     handler: index.es
